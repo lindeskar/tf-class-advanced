@@ -30,5 +30,15 @@ output "google_storage_bucket_name" {
 }
 
 # Move state for existing random string and bucket:
+moved {
+  from = google_storage_bucket.website_gcs
+  to   = module.e01_bucket.google_storage_bucket.e01
+}
+
+moved {
+  from = random_string.myrandom
+  to   = module.e01_bucket.random_string.myrandom
+}
+# Above is the same as running this in CLI:
 # $ terraform state mv random_string.myrandom module.e01_bucket.random_string.myrandom
 # $ terraform state mv google_storage_bucket.website_gcs module.e01_bucket.google_storage_bucket.e01
