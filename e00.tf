@@ -1,5 +1,3 @@
-# Exercise 00
-
 ## APIs
 resource "google_project_service" "default" {
   for_each           = toset(var.google_project_apis)
