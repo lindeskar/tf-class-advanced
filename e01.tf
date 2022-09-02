@@ -24,7 +24,7 @@ module "e01_bucket" {
   bucket_location    = var.google_region
 }
 
-output "google_storage_bucket_name" {
+output "e01_bucket_name" {
   value       = module.e01_bucket.bucket_name
   description = "Google Storage Bucket Name"
 }
